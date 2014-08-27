@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JsonEdit Demo</title>
+    <link rel="stylesheet" type="text/css" href="public/bootstrap/css/bootstrap.min.css" media="all">
+    <script type="text/javascript" src="public/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="public/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="jquery.jsonEdit.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+    <h1>jsonEdit</h1>
+    </div>
+<form role="form">
+  <div class="form-group">
+    <label for="text">Text</label>
+    <textarea id="textarea" name="textarea" cols="30" rows="10"></textarea>
+
+    <a class="btn btn-primary" id="format" href="#">格式化</a>
+  </div>
+</form>
+</div>
+
+<script type="text/javascript">
+$(function(){
+    if( !'__proto__' in {} ){
+        alert('用这浏览器！你逗我。。');
+    }
+
+    var edit = $("#textarea").jsonEdit({
+        debug:true
+        ,dynamic:true
+        ,buttonSelector:'#format'
+        ,onError:function(){
+        }
+    });
+        
+});
+
+</script>
+    
+</body>
+</html>
